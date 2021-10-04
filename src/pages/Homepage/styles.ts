@@ -1,9 +1,18 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+export const Dashboard = styled.main`
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 
 	margin: 32px auto;
+	padding: 0 16px;
+`;
+
+export const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	row-gap: 32px;
+
+	width: 100%;
 `;
