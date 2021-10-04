@@ -13,10 +13,11 @@ export const Container = styled.header`
 	justify-content: space-between;
 
 	width: 100vw;
-	padding: 24px 12px;
+	padding: 24px 16px;
 
 	background-color: ${props => props.theme.secondaryBackground};
 	color: ${props => props.theme.primaryFontColor};
+	box-shadow: 1px 1px 8px 1px rgba(8,8,8,0.1);
 
 	h1 {
 		font-size: 1rem;

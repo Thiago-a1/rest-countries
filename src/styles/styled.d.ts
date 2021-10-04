@@ -7,7 +7,7 @@ declare module 'styled-components' {
 		primaryBackground: string,
 		secondaryBackground: string,
 
-		inputBackground: string,
+		inputFontColor: string,
 
 		primaryFontColor: string,
 	}
