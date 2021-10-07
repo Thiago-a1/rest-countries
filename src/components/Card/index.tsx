@@ -1,17 +1,51 @@
-import React from "react";
+import { useContext } from "react";
+import { useHistory } from "react-router";
 
-import { CardContainer, InfosContainer } from "./styles";
+import { SearchContext } from "../../contexts/SearchContext";
 
-export const Card: React.FC = () => {
+import { CardContainer, FlagContainer, InfosContainer } from "./styles";
+
+interface Infos {
+	flag: string;
+	name: string;
+	population: number;
+	region: string;
+	capital: string;
+	code: string;
+}
+
+export const Card = (
+	{
+		flag,
+		name, 
+		population, 
+		region, 
+		capital,
+		code}: Infos) => {
+	const { countryDetails } = useContext(SearchContext);
+	
+	const history = useHistory();
+
+	function handleCardDetails(code: string) {
+		countryDetails(code);
+	}
+	
 	return (
-		<CardContainer>
-			<div></div>
+		<CardContainer onClick={() => [history.push(`/detail/${code}`), handleCardDetails(code)]}>
+			<FlagContainer>
+				<img src={flag} alt="flag" />
+			</FlagContainer>
 			<InfosContainer>
-				<h2>Germany</h2>
+				<h2>{name}</h2>
 
-				<h4>Population: <span>81.770.900</span></h4>
-				<h4>Region: <span>Europe</span></h4>
-				<h4>Capital: <span>Berlin</span></h4>
+				<h4>Population:
+					<span> {population.toLocaleString(
+						'en-US', {style: 'decimal'}
+						)}
+					</span>
+				</h4>
+				<h4>Region: <span>{region}</span></h4>
+				<h4>Capital: <span>{capital}</span></h4>
 			</InfosContainer>
 		</CardContainer>
 	)

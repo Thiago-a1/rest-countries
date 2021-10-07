@@ -4,26 +4,39 @@ export const CardContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	width: 256px;
+	width: 100%;
+	max-width: 288px;
 
 	margin: 0 auto;
 
 	border-radius: 6px;
 
 	background-color: ${props => props.theme.secondaryBackground};
+	box-shadow: 1px 1px 8px 1px rgba(8,8,8,0.1);
 
-	div {
+	cursor: pointer;
+`;
+
+export const FlagContainer = styled.div`
+	display: flex;
+	align-content: flex-start;
+
+	img {
 		width: 100%;
-		height: 160px;
+		height: 192px;
+
+		border-radius: 6px 6px 0 0;
 	}
 `;
 
 export const InfosContainer = styled.div`
+	height: 192px;
+
 	padding: 8px 32px;
 
 	color: ${props => props.theme.primaryFontColor};
 	h2 {
-		margin-bottom: 16px;
+		margin: 16px 0;
 	}
 
 	h4 {

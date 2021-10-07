@@ -1,20 +1,26 @@
-import { useContext, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 
 import { IoMdSearch } from 'react-icons/io';
+
 import { ThemeContext } from "styled-components";
+import { SearchContext } from "../../contexts/SearchContext";
 
 import { Container } from './styles';
 
 export const Input: React.FC = () => {
 	const { inputFontColor } = useContext(ThemeContext);
+	const { inputSearch } = useContext(SearchContext);
 
 	const [country, setCountry] = useState<string>('');
 
-	function handleInputSearch () {
+	function handleInputSearch(event: FormEvent) {
+		event.preventDefault();
+
+		inputSearch(country);
 	}
 
 	return (
-		<Container>
+		<Container onSubmit={(event) => handleInputSearch(event)}>
 				<IoMdSearch 
 					size={22} 
 					color={inputFontColor} 

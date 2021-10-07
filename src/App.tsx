@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from './contexts/ThemeContext';
+import { SearchProvider } from "./contexts/SearchContext";
 
 import Routes from './routes';
 
@@ -18,9 +19,11 @@ const App = () => {
   return (
     <div className="App">
       <ThemeProvider theme={currentTheme === 'dark' ? dark : light}>
-          <Global />
-          <Header />
-          <Routes />
+          <SearchProvider>
+            <Global />
+            <Header />
+            <Routes />
+          </SearchProvider>
       </ThemeProvider>
     </div>
   );

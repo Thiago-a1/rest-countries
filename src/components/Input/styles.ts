@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.form`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -14,6 +14,11 @@ export const Container = styled.div`
 
 	background-color: ${props => props.theme.secondaryBackground};
 	box-shadow: 1px 1px 8px 1px rgba(8,8,8,0.1);
+
+	@media (min-width: 660px) {
+		width: 100%;
+		max-width: 480px;
+	}
 
 	input {
 		font-weight: 600;

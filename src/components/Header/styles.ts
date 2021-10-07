@@ -19,6 +19,10 @@ export const Container = styled.header`
 	color: ${props => props.theme.primaryFontColor};
 	box-shadow: 1px 1px 8px 1px rgba(8,8,8,0.1);
 
+	@media (min-width: 620px) {
+		padding: 24px 48px;
+	}
+
 	h1 {
 		font-size: 1rem;
 	}
