@@ -65,7 +65,6 @@ export const SearchProvider = ({children}: SearchProviderProps) => {
 
 	useEffect(() => {
 		setExibition(data);
-		console.log('here')
 	},[data]);
 
 	function inputSearch(input: string) {
